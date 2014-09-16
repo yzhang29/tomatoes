@@ -4,4 +4,4 @@
 
 #import "UIImageView+AFNetworking.h"
 #import "AFNetworkReachabilityManager.h"
-#import "M13ProgressHUD.h"
+#import "M13ProgressViewRing.h"

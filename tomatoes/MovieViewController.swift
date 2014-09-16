@@ -12,11 +12,13 @@ class MovieViewController: UIViewController,UITableViewDelegate, UITableViewData
     var movies:[NSDictionary] = []
     var refreshControl:UIRefreshControl!
     var hasNetwork = true
-    @IBOutlet weak var loadingView: UIProgressView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var networkErrorView: UIView!
+    @IBOutlet weak var progressView: M13ProgressViewRing!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.progressView.hidden = false
+        self.progressView.indeterminate = true
         AFNetworkReachabilityManager.sharedManager().setReachabilityStatusChangeBlock{(status: AFNetworkReachabilityStatus?)          in
             if(status == AFNetworkReachabilityStatus.NotReachable ){
                 self.networkErrorView.hidden = false
@@ -39,6 +41,7 @@ class MovieViewController: UIViewController,UITableViewDelegate, UITableViewData
             self.tableView.reloadData()
             self.tableView.hidden = false
             }
+            self.progressView.hidden = true
         }
         
         self.refreshControl = UIRefreshControl()

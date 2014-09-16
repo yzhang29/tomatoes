@@ -104,7 +104,7 @@
         <scene sceneID="b0D-9F-ent">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ikr-0T-90w" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Movies" id="MvP-5j-mLC"/>
+                    <tabBarItem key="tabBarItem" title="Movies" image="movies" id="MvP-5j-mLC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RhT-Zm-X41">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -127,12 +127,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" id="Rj2-c0-DS1">
-                                <rect key="frame" x="0.0" y="280" width="320" height="2"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </progressView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="105" sectionHeaderHeight="22" sectionFooterHeight="22" id="5dC-cr-Kfa">
-                                <rect key="frame" x="0.0" y="70" width="320" height="577"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="577"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -143,23 +139,23 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eyD-bL-7J8">
-                                                    <rect key="frame" x="116" y="8" width="196" height="21"/>
+                                                    <rect key="frame" x="89" y="8" width="196" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5zO-pF-L0l">
+                                                    <rect key="frame" x="90" y="37" width="196" height="59.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1Jh-va-YYq">
-                                                    <rect key="frame" x="24" y="8" width="74" height="89"/>
+                                                    <rect key="frame" x="8" y="8" width="74" height="89"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5zO-pF-L0l">
-                                                    <rect key="frame" x="116" y="37" width="196" height="59.5"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -185,13 +181,18 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <view contentMode="scaleToFill" id="QsX-aX-JHv" customClass="M13ProgressViewRing">
+                                <rect key="frame" x="83" y="210" width="153" height="148"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Movies" id="8jD-uV-QMF"/>
                     <connections>
-                        <outlet property="loadingView" destination="Rj2-c0-DS1" id="yXK-NL-Iew"/>
                         <outlet property="networkErrorView" destination="stb-oy-wsR" id="Dqy-x5-UMn"/>
+                        <outlet property="progressView" destination="QsX-aX-JHv" id="6fa-nW-vp8"/>
                         <outlet property="tableView" destination="5dC-cr-Kfa" id="37b-8o-Ou6"/>
                     </connections>
                 </viewController>
@@ -203,7 +204,7 @@
         <scene sceneID="75m-Ir-mJp">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="T3b-Ku-Jxs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="DVDs" id="0p5-LI-uoy"/>
+                    <tabBarItem key="tabBarItem" title="DVDs" image="dvd" id="0p5-LI-uoy"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rgw-0U-AtT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -232,6 +233,10 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="dvd" width="16" height="16"/>
+        <image name="movies" width="16" height="16"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
