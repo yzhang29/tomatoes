@@ -9,11 +9,24 @@
 import UIKit
 
 class MovieDetailViewController: UIViewController {
-
+    var imageString:String?
+    var titleString:String?
+    var detailString:String?
+    @IBOutlet weak var movieDetailImageView: UIImageView!
+    @IBOutlet weak var movieDetails: UILabel!
+    @IBOutlet weak var movieTitle: UILabel!
+    @IBOutlet weak var movieView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if(imageString != nil){
+            self.movieDetailImageView.setImageWithURL(NSURL(string:imageString!))
+        }
+        if(titleString != nil){
+            self.movieTitle.text = titleString!
+        }
+        if(detailString != nil){
+            self.movieDetails.text = detailString!
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,7 +34,17 @@ class MovieDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func swipeDown(sender: AnyObject) {
+        UIView.animateWithDuration(2, animations: {
+            self.movieView.frame.origin.y = 350
+        })
+    }
 
+    @IBAction func swipeUp(sender: AnyObject) {
+        UIView.animateWithDuration(2, animations: {
+            self.movieView.frame.origin.y = 100
+        })
+    }
     /*
     // MARK: - Navigation
 
